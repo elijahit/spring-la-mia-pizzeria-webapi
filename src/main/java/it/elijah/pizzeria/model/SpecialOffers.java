@@ -2,6 +2,8 @@ package it.elijah.pizzeria.model;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,10 +33,12 @@ public class SpecialOffers {
   @Column(nullable = false)
   private String title;
   
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
   @NotNull
   @Column(name = "start_date", nullable = false)
   private LocalDate startDate;
   
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
   @NotNull
   @Column(name = "end_date", nullable = false)
   private LocalDate endDate;
